@@ -4,6 +4,39 @@
     color: "white !important"
 }
 
+.firstColor {
+    background: #0e1726;
+    color: #888ea8;
+    border-radius: 10px;
+}
+
+.mixed-chart {
+    width: 100%;
+}
+
+/************************************************/
+
+/************** TotalCases Code *****************/
+
+/************************************************/
+
+.count-contianer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    height: 100px;
+    border: 1px solid #191e3a;
+    border-radius: 6px;
+    color: rgb(231, 81, 90);
+}
+
+/************************************************/
+
+/**************** Header Code *******************/
+
+/************************************************/
+
 .countryCode h6 {
     color: #25d5e4;
     font-size: 13px;
@@ -25,6 +58,10 @@
     font-size: 13px;
 }
 
+.searchForm input:focus {
+    outline: none;
+}
+
 .searchForm input::placeholder {
     font-size: 13px;
 }
@@ -40,6 +77,12 @@
     color: #d3d3d3;
     letter-spacing: 1px;
 }
+
+/************************************************/
+
+/**************** Loader Code *******************/
+
+/************************************************/
 
 .loader {
     background: #060818;
