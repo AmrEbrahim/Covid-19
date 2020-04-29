@@ -14,6 +14,10 @@
     width: 100%;
 }
 
+.donut {
+    width: 100%;
+}
+
 /************************************************/
 
 /************** TotalCases Code *****************/
@@ -90,6 +94,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    position: fixed;
+    right: 0;
+    top: 0px;
+    width: 100%;
+    z-index: 999999;
 }
 
 .spinner {
@@ -125,5 +137,18 @@
     100% {
         transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
         -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
+
+/************************************************/
+
+/**************** Media Query *******************/
+
+/************************************************/
+
+@media (max-width: 991px) {
+    .col-lg-4 {
+        margin-top: 10px !important;
+        padding: 0 !important;
     }
 }
