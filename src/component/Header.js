@@ -41,8 +41,8 @@ const Header = (props) => {
           </form>
           <NavbarText>
             <div className="countryCode d-flex">
-              {code("usa")}
-              <h6 className="ml-2">{name("US")}</h6>
+              {code("EGYPT")}
+              <h6 className="ml-2">{name("EG")}</h6>
             </div>
           </NavbarText>
         </Collapse>

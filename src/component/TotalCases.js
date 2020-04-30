@@ -1,11 +1,6 @@
-import React, { useEffect } from "react";
-import { fetchWorldData, fetchCountryData } from "../actions";
-import { connect } from "react-redux";
-const TotalCases = ({ WorldData, fetchWorldData, fetchCountryData }) => {
-  useEffect(() => {
-    fetchWorldData();
-    // fetchCountryData();
-  }, []);
+import React from "react";
+
+const TotalCases = ({ WorldData }) => {
   return (
     <React.Fragment>
       <h4 className="ml-3 text-muted">World Live Statistics</h4>
@@ -43,12 +38,4 @@ const TotalCases = ({ WorldData, fetchWorldData, fetchCountryData }) => {
   );
 };
 
-const mapStateToProps = ({ WorldData }) => {
-  return {
-    WorldData,
-  };
-};
-
-export default connect(mapStateToProps, { fetchWorldData, fetchCountryData })(
-  TotalCases
-);
+export default TotalCases;

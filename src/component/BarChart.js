@@ -1,33 +1,20 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Chart from "react-apexcharts";
-import { connect } from "react-redux";
-import { fetchHistoryData } from "../actions";
 
-const BarChart = ({ fetchHistoryData, HistoryData }) => {
-  useEffect(() => {
-    fetchHistoryData();
-  }, []);
-
-  if (!HistoryData.cases) {
-    return (
-      <div className="loader">
-        <div className="spinner"></div>
-      </div>
-    );
-  }
+const BarChart = ({ Last10Days }) => {
   const series = [
     {
       name: "Deaths",
-      data: Object.values(HistoryData.deaths),
+      data: Object.values(Last10Days.deaths),
     },
     {
       name: "Recovered",
-      data: Object.values(HistoryData.recovered),
+      data: Object.values(Last10Days.recovered),
     },
   ];
   const options = {
     xaxis: {
-      categories: Object.keys(HistoryData.cases),
+      categories: Object.keys(Last10Days.cases),
     },
     colors: ["rgb(226, 160, 63)", "#25d5e4"],
     dataLabels: {
@@ -58,7 +45,4 @@ const BarChart = ({ fetchHistoryData, HistoryData }) => {
   );
 };
 
-const mapStateToProps = ({ HistoryData }) => {
-  return { HistoryData };
-};
-export default connect(mapStateToProps, { fetchHistoryData })(BarChart);
+export default BarChart;

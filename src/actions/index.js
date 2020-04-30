@@ -11,8 +11,14 @@ export const fetchCountryData = () => async (dispatch) => {
   dispatch({ type: "COUNTRY_DATA", payload: response.data });
 };
 
-export const fetchHistoryData = () => async (dispatch) => {
+export const fetchLast10Days = () => async (dispatch) => {
   const response = await CovidData.get("/historical/all?lastdays=10");
   console.log(response.data);
-  dispatch({ type: "HISTORY_DATA", payload: response.data });
+  dispatch({ type: "LAST10DAYS", payload: response.data });
+};
+
+export const fetchLast30Days = () => async (dispatch) => {
+  const response = await CovidData.get("/historical/all");
+  console.log(response.data);
+  dispatch({ type: "LAST30DAYS", payload: response.data });
 };

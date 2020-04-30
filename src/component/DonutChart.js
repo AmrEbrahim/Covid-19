@@ -1,21 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Chart from "react-apexcharts";
-import { connect } from "react-redux";
-import { fetchWorldData } from "../actions";
 
-const Donut = ({ fetchWorldData, WorldData }) => {
-  useEffect(() => {
-    fetchWorldData();
-  }, []);
-  if (!WorldData.active) {
-    return (
-      <div className="loader">
-        <div className="spinner"></div>
-      </div>
-    );
-  }
+const Donut = ({ WorldData }) => {
   const options = {
     labels: ["Active", "Recovered", "Deaths"],
+    colors: ["rgb(27, 85, 226)", "rgb(0, 227, 150)", "rgb(231, 81, 90)"],
     stroke: {
       show: true,
       colors: ["#0e1726"],
@@ -54,7 +43,7 @@ const Donut = ({ fetchWorldData, WorldData }) => {
         <div className="mb-2">
           <p className="h6 text-muted">Impact so far</p>
         </div>
-        <div className="donut d-flex justify-content-center align-items-center">
+        <div className="donut d-flex justify-content-center align-items-center pb-3">
           <Chart options={options} series={series} type="donut" width="400" />
         </div>
       </div>
@@ -62,10 +51,4 @@ const Donut = ({ fetchWorldData, WorldData }) => {
   );
 };
 
-const mapStateToProps = ({ WorldData }) => {
-  return {
-    WorldData,
-  };
-};
-
-export default connect(mapStateToProps, { fetchWorldData })(Donut);
+export default Donut;
