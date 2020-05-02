@@ -22,3 +22,9 @@ export const fetchLast30Days = () => async (dispatch) => {
   console.log(response.data);
   dispatch({ type: "LAST30DAYS", payload: response.data });
 };
+
+export const fetchContinents = () => async (dispatch) => {
+  const response = await CovidData.get("/continents");
+  console.log(response.data);
+  dispatch({ type: "CONTINENTS", payload: response.data });
+};

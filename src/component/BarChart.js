@@ -13,12 +13,24 @@ const BarChart = ({ Last10Days }) => {
     },
   ];
   const options = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
     xaxis: {
       categories: Object.keys(Last10Days.cases),
     },
     colors: ["rgb(226, 160, 63)", "#25d5e4"],
     dataLabels: {
       enabled: false,
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: "45%",
+        endingShape: "rounded",
+      },
     },
     fill: {
       type: "gradient",

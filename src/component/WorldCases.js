@@ -4,29 +4,39 @@ import {
   fetchCountryData,
   fetchLast10Days,
   fetchLast30Days,
+  fetchContinents,
 } from "../actions";
 import { connect } from "react-redux";
 import TotalCases from "./TotalCases";
 import BarChart from "./BarChart";
 import DonutChart from "./DonutChart";
 import LineChart from "./LineChart";
+import ColumnChart from "./ColumnChart";
 
 const WorldCases = ({
   fetchWorldData,
   fetchLast10Days,
   fetchLast30Days,
+  fetchContinents,
   fetchCountryData,
   WorldData,
   Last10Days,
   Last30Days,
+  Continents,
 }) => {
   useEffect(() => {
     fetchWorldData();
     fetchLast10Days();
     fetchLast30Days();
+    fetchContinents();
     // fetchCountryData();
   }, []);
-  if (!Last10Days.cases || !WorldData.active) {
+  if (
+    !Last10Days.cases ||
+    !Last30Days.cases ||
+    !WorldData.active ||
+    !Continents[0]
+  ) {
     return (
       <div className="loader">
         <div className="spinner"></div>
@@ -40,16 +50,18 @@ const WorldCases = ({
         <BarChart Last10Days={Last10Days} />
         <DonutChart WorldData={WorldData} />
         <LineChart Last30Days={Last30Days} />
+        <ColumnChart continents={Continents} />
       </div>
     </React.Fragment>
   );
 };
 
-const mapStateToProps = ({ WorldData, Last10Days, Last30Days }) => {
+const mapStateToProps = ({ WorldData, Last10Days, Last30Days, Continents }) => {
   return {
     WorldData,
     Last10Days,
     Last30Days,
+    Continents,
   };
 };
 
@@ -58,4 +70,5 @@ export default connect(mapStateToProps, {
   fetchCountryData,
   fetchLast10Days,
   fetchLast30Days,
+  fetchContinents,
 })(WorldCases);

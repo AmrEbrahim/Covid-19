@@ -17,6 +17,11 @@ const LineChart = ({ Last30Days }) => {
     },
   ];
   const options = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
     xaxis: {
       categories: Object.keys(Last30Days.cases),
     },
