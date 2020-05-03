@@ -14,6 +14,7 @@ const BarChart = ({ Last10Days }) => {
   ];
   const options = {
     chart: {
+      foreColor: "#FFF",
       toolbar: {
         show: false,
       },

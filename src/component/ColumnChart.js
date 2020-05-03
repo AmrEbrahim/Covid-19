@@ -41,6 +41,7 @@ const ColumnChart = ({ continents }) => {
     colors: ["rgb(0, 143, 251)", "rgb(0, 227, 150)", "rgb(231, 81, 90)"],
     chart: {
       type: "bar",
+      foreColor: "#FFF",
       //   height: 350,
       stacked: true,
       toolbar: {

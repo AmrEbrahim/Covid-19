@@ -18,6 +18,7 @@ const LineChart = ({ Last30Days }) => {
   ];
   const options = {
     chart: {
+      foreColor: "#FFF",
       toolbar: {
         show: false,
       },

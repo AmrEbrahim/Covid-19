@@ -3,6 +3,10 @@ import Chart from "react-apexcharts";
 
 const Donut = ({ WorldData }) => {
   const options = {
+    chart: {
+      type: "bar",
+      foreColor: "#FFF",
+    },
     labels: ["Active", "Recovered", "Deaths"],
     colors: ["rgb(27, 85, 226)", "rgb(0, 227, 150)", "rgb(231, 81, 90)"],
     stroke: {
