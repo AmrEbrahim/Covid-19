@@ -33,7 +33,7 @@ const Donut = ({ WorldData }) => {
               color: "#FFF",
             },
           },
-          size: "70%",
+          size: "65%",
         },
       },
     },
@@ -48,7 +48,7 @@ const Donut = ({ WorldData }) => {
           <p className="h6 text-muted">Impact so far</p>
         </div>
         <div className="donut d-flex justify-content-center align-items-center pb-3">
-          <Chart options={options} series={series} type="donut" width="400" />
+          <Chart options={options} series={series} type="donut" width="350" />
         </div>
       </div>
     </div>

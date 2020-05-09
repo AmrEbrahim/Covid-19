@@ -12,6 +12,8 @@ import BarChart from "./BarChart";
 import DonutChart from "./DonutChart";
 import LineChart from "./LineChart";
 import ColumnChart from "./ColumnChart";
+import Map from "./WorldMap";
+import StatisticsTable from "./StatisticsTable";
 
 const WorldCases = ({
   fetchWorldData,
@@ -51,6 +53,10 @@ const WorldCases = ({
         <DonutChart WorldData={WorldData} />
         <LineChart Last30Days={Last30Days} />
         <ColumnChart continents={Continents} />
+      </div>
+      <Map />
+      <div className="row mx-3 mt-2">
+        <StatisticsTable />
       </div>
     </React.Fragment>
   );

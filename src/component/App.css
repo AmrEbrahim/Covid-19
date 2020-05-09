@@ -10,6 +10,11 @@
     border-radius: 10px;
 }
 
+.MapColor {
+    background: rgb(92, 26, 195);
+    border-radius: 10px;
+}
+
 .mixed-chart {
     width: 100%;
 }
@@ -82,6 +87,20 @@
     letter-spacing: 1px;
 }
 
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+
+.table-row:hover {
+    transform: scale(1.008);
+    background-color: #191e3a;
+}
+
 /************************************************/
 
 /**************** Loader Code *******************/
@@ -148,7 +167,14 @@
 
 @media (max-width: 991px) {
     .col-lg-4 {
-        margin-top: 10px !important;
+        margin-top: 20px !important;
+        padding: 0 !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .col-xl-4 {
+        margin-bottom: 20px !important;
         padding: 0 !important;
     }
 }

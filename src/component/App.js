@@ -5,6 +5,7 @@ import WorldCases from "./WorldCases";
 import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
 import "./App.css";
+import "jvectormap-next/jquery-jvectormap.css";
 
 const App = () => {
   return (

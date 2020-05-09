@@ -25,6 +25,9 @@ const LineChart = ({ Last30Days }) => {
     },
     xaxis: {
       categories: Object.keys(Last30Days.cases),
+      labels: {
+        rotateAlways: true,
+      },
     },
     stroke: {
       width: 3,
@@ -36,6 +39,16 @@ const LineChart = ({ Last30Days }) => {
     dataLabels: {
       enabled: false,
     },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          xaxis: {
+            max: 10,
+          },
+        },
+      },
+    ],
     fill: {
       type: "gradient",
       gradient: {
@@ -48,7 +61,7 @@ const LineChart = ({ Last30Days }) => {
     },
   };
   return (
-    <div className="col-12 firstColor mt-3 px-4 pt-4">
+    <div className="col-12 firstColor mt-3 px-2 pt-4">
       <div className="app">
         <div className="mb-2" style={{ borderBottom: "1px dashed #3b3f5c" }}>
           <p className="h6 text-muted">Impact over time (30 Days)</p>

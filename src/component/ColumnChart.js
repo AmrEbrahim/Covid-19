@@ -38,6 +38,16 @@ const ColumnChart = ({ continents }) => {
     },
   ];
   const options = {
+    xaxis: {
+      categories: [
+        continents[0].continent,
+        continents[1].continent,
+        continents[2].continent,
+        continents[3].continent,
+        continents[4].continent,
+        continents[5].continent,
+      ],
+    },
     colors: ["rgb(0, 143, 251)", "rgb(0, 227, 150)", "rgb(231, 81, 90)"],
     chart: {
       type: "bar",
@@ -47,6 +57,9 @@ const ColumnChart = ({ continents }) => {
       toolbar: {
         show: false,
       },
+    },
+    dataLabels: {
+      enabled: false,
     },
     responsive: [
       {
@@ -64,17 +77,6 @@ const ColumnChart = ({ continents }) => {
       bar: {
         horizontal: false,
       },
-    },
-
-    xaxis: {
-      categories: [
-        continents[0].continent,
-        continents[1].continent,
-        continents[2].continent,
-        continents[3].continent,
-        continents[4].continent,
-        continents[5].continent,
-      ],
     },
     legend: {
       position: "right",
