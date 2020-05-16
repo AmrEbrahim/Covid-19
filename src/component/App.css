@@ -103,6 +103,72 @@
 
 /************************************************/
 
+/***************** Table Code *******************/
+
+/************************************************/
+
+table {
+    color: #888ea8 !important;
+    font-size: 13px;
+}
+
+tr {
+    border-bottom: 1px solid #191e3a;
+}
+
+td {
+    border: none !important;
+}
+
+th {
+    border: none !important;
+}
+
+tr:hover {
+    color: #888ea8 !important;
+    transform: scale(1.05);
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.sorting_desc, .sorting, .sorting_asc {
+    color: #009688;
+    border: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.page-link {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none !important;
+    border: none !important;
+    cursor: pointer;
+}
+
+.page-item {
+    border-radius: 50% !important;
+    margin: 1px;
+}
+
+.page-item:hover {
+    background: #191e3a;
+    color: #fff;
+}
+
+.active {
+    background-color: #009688 !important;
+}
+
+.disabled {
+    background: #191e3a !important;
+}
+
+/************************************************/
+
 /**************** Loader Code *******************/
 
 /************************************************/
@@ -164,6 +230,12 @@
 /**************** Media Query *******************/
 
 /************************************************/
+
+@media (max-width: 991px) {
+    .table {
+        padding: 5px !important;
+    }
+}
 
 @media (max-width: 991px) {
     .col-lg-4 {
