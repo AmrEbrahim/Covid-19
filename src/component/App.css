@@ -126,7 +126,7 @@ th {
 
 tr:hover {
     color: #888ea8 !important;
-    transform: scale(1.05);
+    transform: scale(1.02);
     transition: all 0.1s ease;
     cursor: pointer;
 }
@@ -165,6 +165,31 @@ tr:hover {
 
 .disabled {
     background: #191e3a !important;
+}
+
+.form-control {
+    background: #1b2e4b;
+    border: 1px solid #1b2e4b;
+    box-shadow: none;
+    border-radius: 6px;
+    color: #009688;
+    font-size: 15px;
+    height: auto;
+    letter-spacing: 1px;
+    padding: 0.75rem 1.25rem;
+}
+
+.form-control:focus {
+    background: #1b2e4b;
+    border: none !important;
+    outline: none !important;
+    color: #009688;
+    box-shadow: none;
+    font-size: 15px;
+}
+
+.custom-select {
+    width: 75px;
 }
 
 /************************************************/

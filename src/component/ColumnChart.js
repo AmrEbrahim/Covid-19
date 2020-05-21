@@ -1,51 +1,51 @@
 import React from "react";
 import Chart from "react-apexcharts";
 
-const ColumnChart = ({ continents }) => {
+const ColumnChart = ({ data }) => {
   const series = [
     {
       name: "Cases",
       data: [
-        continents[0].active,
-        continents[1].active,
-        continents[2].active,
-        continents[3].active,
-        continents[4].active,
-        continents[5].active,
+        data[0].active,
+        data[1].active,
+        data[2].active,
+        data[3].active,
+        data[4].active,
+        data[5].active,
       ],
     },
     {
       name: "Recovered",
       data: [
-        continents[0].recovered,
-        continents[1].recovered,
-        continents[2].recovered,
-        continents[3].recovered,
-        continents[4].recovered,
-        continents[5].recovered,
+        data[0].recovered,
+        data[1].recovered,
+        data[2].recovered,
+        data[3].recovered,
+        data[4].recovered,
+        data[5].recovered,
       ],
     },
     {
       name: "Deaths",
       data: [
-        continents[0].deaths,
-        continents[1].deaths,
-        continents[2].deaths,
-        continents[3].deaths,
-        continents[4].deaths,
-        continents[5].deaths,
+        data[0].deaths,
+        data[1].deaths,
+        data[2].deaths,
+        data[3].deaths,
+        data[4].deaths,
+        data[5].deaths,
       ],
     },
   ];
   const options = {
     xaxis: {
       categories: [
-        continents[0].continent,
-        continents[1].continent,
-        continents[2].continent,
-        continents[3].continent,
-        continents[4].continent,
-        continents[5].continent,
+        data[0].continent,
+        data[1].continent,
+        data[2].continent,
+        data[3].continent,
+        data[4].continent,
+        data[5].continent,
       ],
     },
     colors: ["rgb(0, 143, 251)", "rgb(0, 227, 150)", "rgb(231, 81, 90)"],
@@ -89,7 +89,7 @@ const ColumnChart = ({ continents }) => {
     <div className="col-12 col-sm-12 col-lg-12 firstColor px-4 pt-4 mt-3">
       <div className="app">
         <div className="mb-2" style={{ borderBottom: "1px dashed #3b3f5c" }}>
-          <p className="h6 text-muted">Impact over Continents</p>
+          <p className="h6 text-muted">Impact over data</p>
         </div>
         <div className="mixed-chart">
           <Chart options={options} series={series} type="bar" height="300" />

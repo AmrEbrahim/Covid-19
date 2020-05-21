@@ -1,7 +1,7 @@
 import React from "react";
 import Chart from "react-apexcharts";
 
-const Donut = ({ WorldData }) => {
+const Donut = ({ data }) => {
   const options = {
     chart: {
       type: "bar",
@@ -39,7 +39,7 @@ const Donut = ({ WorldData }) => {
     },
   };
 
-  const series = [WorldData.active, WorldData.recovered, WorldData.deaths];
+  const series = [data.active, data.recovered, data.deaths];
 
   return (
     <div className="col-12 col-sm-12 col-lg-4 pr-0">

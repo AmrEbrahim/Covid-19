@@ -6,9 +6,15 @@ export const fetchWorldData = () => async (dispatch) => {
   dispatch({ type: "WORLD_DATA", payload: response.data });
 };
 
-export const fetchCountryData = (country) => async (dispatch) => {
+export const fetchCountriesData = () => async (dispatch) => {
   // const response = await CovidData.get(`/countries/${country}`);
   const response = await CovidData.get(`/countries`);
+  console.log(response.data);
+  dispatch({ type: "COUNTRIES_DATA", payload: response.data });
+};
+
+export const fetchCountryData = (country) => async (dispatch) => {
+  const response = await CovidData.get(`/countries/${country}`);
   console.log(response.data);
   dispatch({ type: "COUNTRY_DATA", payload: response.data });
 };

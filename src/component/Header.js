@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import history from "../history";
 import {
   Collapse,
   Navbar,
@@ -10,9 +11,15 @@ import { code, name } from "country-emoji";
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [term, setTerm] = useState("");
 
   const toggle = () => setIsOpen(!isOpen);
-
+  const onFormSubmit = (e) => {
+    // e.preventDefault();
+    console.log(term);
+    history.push(`/${term}`);
+    // this.props.fetchSearch(this.state.term);
+  };
   return (
     <div>
       <Navbar dark expand="md">
@@ -28,11 +35,11 @@ const Header = (props) => {
             />
             Coronavirus (COVID-19)
           </NavbarBrand>
-          <form className="searchForm mr-auto">
+          <form onSubmit={onFormSubmit} className="searchForm mr-auto">
             <input
               className="mr-3"
-              //value={this.state.term}
-              //onChange={(e) => this.setState({ term: e.target.value })}
+              value={term}
+              onChange={(e) => setTerm(e.target.value)}
               placeholder="Search a Country..."
             />
             <button className="searchBtn" type="submit">

@@ -1,19 +1,19 @@
 import React from "react";
 import Chart from "react-apexcharts";
 
-const LineChart = ({ Last30Days }) => {
+const LineChart = ({ data }) => {
   const series = [
     {
       name: "Cases",
-      data: Object.values(Last30Days.cases),
+      data: Object.values(data.cases),
     },
     {
       name: "Deaths",
-      data: Object.values(Last30Days.deaths),
+      data: Object.values(data.deaths),
     },
     {
       name: "Recovered",
-      data: Object.values(Last30Days.recovered),
+      data: Object.values(data.recovered),
     },
   ];
   const options = {
@@ -24,7 +24,7 @@ const LineChart = ({ Last30Days }) => {
       },
     },
     xaxis: {
-      categories: Object.keys(Last30Days.cases),
+      categories: Object.keys(data.cases),
       labels: {
         rotateAlways: true,
       },

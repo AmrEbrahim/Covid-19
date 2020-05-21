@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import {
   fetchWorldData,
-  fetchCountryData,
+  fetchCountriesData,
   fetchLast10Days,
   fetchLast30Days,
   fetchContinents,
@@ -20,18 +20,19 @@ const WorldCases = ({
   fetchLast10Days,
   fetchLast30Days,
   fetchContinents,
-  fetchCountryData,
+  fetchCountriesData,
   WorldData,
   Last10Days,
   Last30Days,
   Continents,
+  CountriesData,
 }) => {
   useEffect(() => {
     fetchWorldData();
     fetchLast10Days();
     fetchLast30Days();
     fetchContinents();
-    // fetchCountryData();
+    fetchCountriesData();
   }, []);
   if (
     !Last10Days.cases ||
@@ -47,33 +48,40 @@ const WorldCases = ({
   }
   return (
     <React.Fragment>
-      <TotalCases WorldData={WorldData} />
+      <TotalCases data={WorldData} />
       <div className="row mx-3 mt-2">
-        <BarChart Last10Days={Last10Days} />
-        <DonutChart WorldData={WorldData} />
-        <LineChart Last30Days={Last30Days} />
-        <ColumnChart continents={Continents} />
+        <BarChart data={Last10Days} />
+        <DonutChart data={WorldData} />
+        <LineChart data={Last30Days} />
+        <ColumnChart data={Continents} />
       </div>
-      <Map />
+      <Map data={CountriesData} />
       <div className="row mx-3 mt-2">
-        <StatisticsTable />
+        <StatisticsTable data={CountriesData} />
       </div>
     </React.Fragment>
   );
 };
 
-const mapStateToProps = ({ WorldData, Last10Days, Last30Days, Continents }) => {
+const mapStateToProps = ({
+  WorldData,
+  Last10Days,
+  Last30Days,
+  Continents,
+  CountriesData,
+}) => {
   return {
     WorldData,
     Last10Days,
     Last30Days,
     Continents,
+    CountriesData,
   };
 };
 
 export default connect(mapStateToProps, {
   fetchWorldData,
-  fetchCountryData,
+  fetchCountriesData,
   fetchLast10Days,
   fetchLast30Days,
   fetchContinents,

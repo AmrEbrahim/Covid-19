@@ -1,15 +1,15 @@
 import React from "react";
 import Chart from "react-apexcharts";
 
-const BarChart = ({ Last10Days }) => {
+const BarChart = ({ data }) => {
   const series = [
     {
       name: "Deaths",
-      data: Object.values(Last10Days.deaths),
+      data: Object.values(data.deaths),
     },
     {
       name: "Recovered",
-      data: Object.values(Last10Days.recovered),
+      data: Object.values(data.recovered),
     },
   ];
   const options = {
@@ -20,7 +20,7 @@ const BarChart = ({ Last10Days }) => {
       },
     },
     xaxis: {
-      categories: Object.keys(Last10Days.cases),
+      categories: Object.keys(data.cases),
     },
     colors: ["rgb(226, 160, 63)", "#25d5e4"],
     dataLabels: {

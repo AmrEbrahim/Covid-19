@@ -1,31 +1,22 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import React from "react";
 import { VectorMap } from "react-jvectormap";
-import { code, name } from "country-emoji";
 
-import { fetchCountryData } from "../actions";
-
-const Map = ({ fetchCountryData, CountryData }) => {
-  useEffect(() => {
-    fetchCountryData();
-  }, []);
-  let data = CountryData[60];
-  if (!data) {
+const Map = ({ data }) => {
+  let country = data[60];
+  if (!country) {
     return null;
   }
   const handleClick = (e, countryCode) => {
-    React.memo((data) => {});
-    console.log(countryCode);
-    for (let key in CountryData) {
-      if (CountryData[key].countryInfo.iso2 === countryCode) {
-        data = CountryData[key];
-        console.log(data);
+    for (let key in data) {
+      if (data[key].countryInfo.iso2 === countryCode) {
+        country = data[key];
+        console.log(country);
       }
     }
   };
-  const ActivePercentage = (data.active * 100) / data.cases;
-  const RecoveredPercentage = (data.recovered * 100) / data.cases;
-  const DeathsPercentage = (data.deaths * 100) / data.cases;
+  const ActivePercentage = (country.active * 100) / country.cases;
+  const RecoveredPercentage = (country.recovered * 100) / country.cases;
+  const DeathsPercentage = (country.deaths * 100) / country.cases;
 
   return (
     <div className="row mx-3 my-3 mb-2">
@@ -33,10 +24,12 @@ const Map = ({ fetchCountryData, CountryData }) => {
         <div className="col-12 col-xl-12 firstColor h-100">
           <div className="country-heading p-4 mb-3">
             <h6 className="text-white">
-              <small className="mr-1" style={{ fontSize: "13px" }}>
-                {code(data.country)}
-              </small>
-              {data.country}
+              <img
+                className="mr-1"
+                style={{ width: "25px", height: "25px" }}
+                src={country.countryInfo.flag}
+              />
+              {country.country}
             </h6>
           </div>
           <div className="d-flex mb-4">
@@ -46,7 +39,7 @@ const Map = ({ fetchCountryData, CountryData }) => {
             <div style={{ width: "90%" }}>
               <div className="d-flex justify-content-between align-items-center">
                 <small>Cases</small>
-                <small>{data.active}</small>
+                <small>{country.active}</small>
               </div>
               <div className="progress" style={{ height: "10px" }}>
                 <div
@@ -70,7 +63,7 @@ const Map = ({ fetchCountryData, CountryData }) => {
             <div style={{ width: "90%" }}>
               <div className="d-flex justify-content-between align-items-center">
                 <small>Recovered</small>
-                <small>{data.recovered}</small>
+                <small>{country.recovered}</small>
               </div>
               <div className="progress" style={{ height: "10px" }}>
                 <div
@@ -91,7 +84,7 @@ const Map = ({ fetchCountryData, CountryData }) => {
             <div style={{ width: "90%" }}>
               <div className="d-flex justify-content-between align-items-center">
                 <small>Deaths</small>
-                <small>{data.deaths}</small>
+                <small>{country.deaths}</small>
               </div>
               <div className="progress" style={{ height: "10px" }}>
                 <div
@@ -112,7 +105,7 @@ const Map = ({ fetchCountryData, CountryData }) => {
             <div style={{ width: "90%" }}>
               <div className="d-flex justify-content-between align-items-center">
                 <small>Overall impacted</small>
-                <small>{data.cases}</small>
+                <small>{country.cases}</small>
               </div>
               <div className="progress" style={{ height: "10px" }}>
                 <div
@@ -165,12 +158,4 @@ const Map = ({ fetchCountryData, CountryData }) => {
   );
 };
 
-const mapStateToProps = ({ CountryData }) => {
-  return {
-    CountryData,
-  };
-};
-
-export default connect(mapStateToProps, {
-  fetchCountryData,
-})(Map);
+export default Map;
