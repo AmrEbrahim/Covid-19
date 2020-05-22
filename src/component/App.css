@@ -75,11 +75,15 @@
     font-size: 13px;
 }
 
-.searchForm button {
+.searchBtn {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 4px;
     left: 5px;
     background: #191e3a;
+    width: 32px;
     height: 34px;
     border: none;
     border-radius: 8px;

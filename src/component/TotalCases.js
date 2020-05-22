@@ -3,7 +3,9 @@ import React from "react";
 const TotalCases = ({ data }) => {
   return (
     <React.Fragment>
-      <h4 className="ml-3 text-muted">World Live Statistics</h4>
+      <h4 className="ml-3 text-muted">
+        {data.country ? data.country : "World"} Live Statistics
+      </h4>
       <div className="alert firstColor m-3 py-3">
         <div className="row justify-content-around">
           <div className="col-4 col-sm-2 d-flex justfiy-content-center align-items-center flex-column">

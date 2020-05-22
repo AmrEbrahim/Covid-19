@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
+import history from "../history";
 
 import World from "./World";
 import Country from "./Country";
@@ -13,11 +14,11 @@ import "jvectormap-next/jquery-jvectormap.css";
 const App = () => {
   return (
     <div className="fluid-container">
-      <BrowserRouter>
+      <Router history={history}>
         <Header />
         <Route path="/" exact component={World}></Route>
-        <Route path="/:country" exact component={Country}></Route>
-      </BrowserRouter>
+        <Route path="/:id" exact component={Country}></Route>
+      </Router>
     </div>
   );
 };

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import {
   fetchCountryData,
-  fetchCountriesData,
-  fetchLast10Days,
-  fetchLast30Days,
+  fetchCountry10Days,
+  fetchCountry30Days,
+  clearData,
 } from "../actions";
 import { connect } from "react-redux";
 import TotalCases from "./TotalCases";
@@ -12,23 +12,21 @@ import DonutChart from "./DonutChart";
 import LineChart from "./LineChart";
 import StatisticsTable from "./StatisticsTable";
 
-const WorldCases = ({
+const Country = ({
   fetchCountryData,
-  fetchLast10Days,
-  fetchLast30Days,
+  fetchCountry10Days,
+  fetchCountry30Days,
   fetchCountriesData,
   CountryData,
   Last10Days,
   Last30Days,
-  CountriesData,
   match,
 }) => {
   useEffect(() => {
-    fetchCountryData(match.params.country);
-    fetchLast10Days();
-    fetchLast30Days();
-    fetchCountriesData();
-  }, []);
+    fetchCountryData(match.params.id);
+    fetchCountry10Days(match.params.id);
+    fetchCountry30Days(match.params.id);
+  }, [match.params.id]);
   if (!Last10Days.cases || !Last30Days.cases || !CountryData.active) {
     return (
       <div className="loader">
@@ -45,29 +43,23 @@ const WorldCases = ({
         <LineChart data={Last30Days} />
       </div>
       <div className="row mx-3 mt-2">
-        <StatisticsTable data={CountriesData} />
+        {/* <StatisticsTable data={CountriesData} /> */}
       </div>
     </React.Fragment>
   );
 };
 
-const mapStateToProps = ({
-  CountryData,
-  Last10Days,
-  Last30Days,
-  CountriesData,
-}) => {
+const mapStateToProps = ({ CountryData, Last10Days, Last30Days }) => {
   return {
     CountryData,
     Last10Days,
     Last30Days,
-    CountriesData,
   };
 };
 
 export default connect(mapStateToProps, {
   fetchCountryData,
-  fetchCountriesData,
-  fetchLast10Days,
-  fetchLast30Days,
-})(WorldCases);
+  fetchCountry10Days,
+  fetchCountry30Days,
+  clearData,
+})(Country);

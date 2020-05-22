@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import history from "../history";
+import { connect } from "react-redux";
+import { fetchCountryData, clearData } from "../actions";
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   NavbarText,
+  Button,
 } from "reactstrap";
 import { code, name } from "country-emoji";
 
-const Header = (props) => {
+const Header = ({ fetchCountryData, clearData }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [term, setTerm] = useState("");
+  const [world, setworld] = useState("");
 
   const toggle = () => setIsOpen(!isOpen);
-  const onFormSubmit = (e) => {
-    // e.preventDefault();
-    console.log(term);
+  const onFormSubmit = async (e) => {
+    e.preventDefault();
+    setworld(term);
     history.push(`/${term}`);
-    // this.props.fetchSearch(this.state.term);
   };
   return (
     <div>
@@ -42,14 +45,16 @@ const Header = (props) => {
               onChange={(e) => setTerm(e.target.value)}
               placeholder="Search a Country..."
             />
-            <button className="searchBtn" type="submit">
+            <Button className="searchBtn" type="submit">
               <i className="fa fa-search"></i>
-            </button>
+            </Button>
           </form>
           <NavbarText>
             <div className="countryCode d-flex">
-              {code("EGYPT")}
-              <h6 className="ml-2">{name("EG")}</h6>
+              {world === "" ? "🌎" : code(term)}
+              <h6 className="ml-2">
+                {world === "" ? "World" : name(code(term))}
+              </h6>
             </div>
           </NavbarText>
         </Collapse>
@@ -58,4 +63,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default connect(null, { fetchCountryData, clearData })(Header);
