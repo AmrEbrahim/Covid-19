@@ -1,4 +1,4 @@
-Welcome to Covid-19
+Welcome to Covid-19 dashboard with live statistics
 
 For compiling and running
 
