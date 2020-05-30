@@ -33,7 +33,13 @@ const WorldCases = ({
     fetchLast30Days();
     fetchContinents();
     fetchCountriesData();
-  }, []);
+  }, [
+    fetchWorldData,
+    fetchLast10Days,
+    fetchLast30Days,
+    fetchContinents,
+    fetchCountriesData,
+  ]);
   if (
     !Last10Days.cases ||
     !Last30Days.cases ||

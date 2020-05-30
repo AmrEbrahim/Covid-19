@@ -28,6 +28,7 @@ const Map = ({ data }) => {
                 className="mr-1"
                 style={{ width: "25px", height: "25px" }}
                 src={country.countryInfo.flag}
+                alt="Country"
               />
               {country.country}
             </h6>

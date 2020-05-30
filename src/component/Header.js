@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import history from "../history";
-import { connect } from "react-redux";
-import { fetchCountryData, clearData } from "../actions";
+import { useHistory } from "react-router-dom";
 import {
   Collapse,
   Navbar,
@@ -10,18 +8,20 @@ import {
   NavbarText,
   Button,
 } from "reactstrap";
+
 import { code, name } from "country-emoji";
 
-const Header = ({ fetchCountryData, clearData }) => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [term, setTerm] = useState("");
-  const [world, setworld] = useState("");
-
+  const [currentCountry, setCurrentCountry] = useState("");
+  const [countryInput, setCountryInput] = useState("");
+  const history = useHistory();
   const toggle = () => setIsOpen(!isOpen);
+
   const onFormSubmit = async (e) => {
     e.preventDefault();
-    setworld(term);
-    history.push(`/${term}`);
+    setCountryInput(currentCountry);
+    history.push(`/${currentCountry}`);
   };
   return (
     <div>
@@ -41,8 +41,8 @@ const Header = ({ fetchCountryData, clearData }) => {
           <form onSubmit={onFormSubmit} className="searchForm mr-auto">
             <input
               className="mr-3"
-              value={term}
-              onChange={(e) => setTerm(e.target.value)}
+              value={currentCountry}
+              onChange={(e) => setCurrentCountry(e.target.value)}
               placeholder="Search a Country..."
             />
             <Button className="searchBtn" type="submit">
@@ -51,9 +51,9 @@ const Header = ({ fetchCountryData, clearData }) => {
           </form>
           <NavbarText>
             <div className="countryCode d-flex">
-              {world === "" ? "🌎" : code(term)}
+              {countryInput === "" ? "🌎" : code(countryInput)}
               <h6 className="ml-2">
-                {world === "" ? "World" : name(code(term))}
+                {countryInput === "" ? "World" : name(code(countryInput))}
               </h6>
             </div>
           </NavbarText>
@@ -63,4 +63,4 @@ const Header = ({ fetchCountryData, clearData }) => {
   );
 };
 
-export default connect(null, { fetchCountryData, clearData })(Header);
+export default Header;
