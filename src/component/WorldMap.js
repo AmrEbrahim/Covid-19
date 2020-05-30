@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { VectorMap } from "react-jvectormap";
 
 const Map = ({ data }) => {
-  let country = data[60];
-  if (!country) {
+  const [country, setCountry] = useState(data[60]);
+  if (!data) {
     return null;
   }
   const handleClick = (e, countryCode) => {
     for (let key in data) {
       if (data[key].countryInfo.iso2 === countryCode) {
-        country = data[key];
-        console.log(country);
+        setCountry(data[key]);
       }
     }
   };
@@ -126,7 +125,7 @@ const Map = ({ data }) => {
         <VectorMap
           map={"world_mill"}
           backgroundColor="rgb(92, 26, 195)" //change it to ocean blue: #0077be
-          zoomOnScroll={true}
+          zoomOnScroll={false}
           containerStyle={{
             width: "100%",
             height: "420px",
@@ -151,8 +150,7 @@ const Map = ({ data }) => {
             },
             selectedHover: {},
           }}
-          regionsSelectable={true}
-          regionsSelectableOne={true}
+          regionsSelectable={false}
         />
       </div>
     </div>

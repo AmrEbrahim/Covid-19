@@ -15,6 +15,10 @@
     border-radius: 10px;
 }
 
+.jvectormap-tip {
+    display: none !important;
+}
+
 .mixed-chart {
     width: 100%;
 }

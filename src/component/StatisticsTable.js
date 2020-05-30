@@ -5,11 +5,6 @@ const StatisticsTable = ({ data }) => {
   const Tabledata = {
     columns: [
       {
-        label: "Flag",
-        field: "countryInfo.flag",
-        sort: "asc",
-      },
-      {
         label: "Country",
         field: "country",
         sort: "asc",
@@ -17,6 +12,11 @@ const StatisticsTable = ({ data }) => {
       {
         label: "Continent",
         field: "continent",
+        sort: "asc",
+      },
+      {
+        label: "Population",
+        field: "population",
         sort: "asc",
       },
       {
