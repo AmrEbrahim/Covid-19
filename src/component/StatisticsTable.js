@@ -51,7 +51,7 @@ const StatisticsTable = ({ data }) => {
         responsiveSm
         hover
         data={Tabledata}
-        order={["cases", "asc"]}
+        order={["cases", "desc"]}
       />
     </div>
   );
