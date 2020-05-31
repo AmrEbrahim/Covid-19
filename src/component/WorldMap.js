@@ -4,7 +4,11 @@ import { VectorMap } from "react-jvectormap";
 const Map = ({ data }) => {
   const [country, setCountry] = useState(data[60]);
   if (!data) {
-    return null;
+    return (
+      <div className="loader">
+        <div className="spinner"></div>
+      </div>
+    );
   }
   const handleClick = (e, countryCode) => {
     for (let key in data) {
@@ -13,6 +17,7 @@ const Map = ({ data }) => {
       }
     }
   };
+
   const ActivePercentage = (country.active * 100) / country.cases;
   const RecoveredPercentage = (country.recovered * 100) / country.cases;
   const DeathsPercentage = (country.deaths * 100) / country.cases;

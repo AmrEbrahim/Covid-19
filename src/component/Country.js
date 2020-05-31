@@ -10,7 +10,7 @@ import TotalCases from "./TotalCases";
 import BarChart from "./BarChart";
 import DonutChart from "./DonutChart";
 import LineChart from "./LineChart";
-import CountryTable from "./CountryTable";
+// import CountryTable frgom "./CountryTable";
 
 const Country = ({
   fetchCountryData,

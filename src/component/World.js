@@ -44,6 +44,7 @@ const WorldCases = ({
     !Last10Days.cases ||
     !Last30Days.cases ||
     !WorldData.active ||
+    !CountriesData[0] ||
     !Continents[0]
   ) {
     return (
@@ -52,6 +53,7 @@ const WorldCases = ({
       </div>
     );
   }
+
   return (
     <React.Fragment>
       <TotalCases data={WorldData} />
