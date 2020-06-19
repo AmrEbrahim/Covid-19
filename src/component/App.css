@@ -1,3 +1,7 @@
+svg {
+    touch-action: inherit !important;
+}
+
 .fluid-container {
     background: #060818;
     min-height: 100vh;
