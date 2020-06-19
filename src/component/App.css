@@ -264,13 +264,25 @@ tr:hover {
 
 /************************************************/
 
-@media (max-width: 991px) {
-    .table {
-        padding: 5px !important;
+@media (max-width: 767px) {
+    .navbar-collapse {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .searchForm {
+        margin: 0 !important;
+    }
+    .searchForm input {
+        width: 90% !important;
     }
 }
 
 @media (max-width: 991px) {
+    .table {
+        padding: 5px !important;
+    }
     .col-lg-4 {
         margin-top: 20px !important;
         padding: 0 !important;
