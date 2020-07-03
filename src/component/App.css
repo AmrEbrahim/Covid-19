@@ -2,6 +2,12 @@ svg {
     touch-action: inherit !important;
 }
 
+.notFound img {
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+}
+
 .fluid-container {
     background: #060818;
     min-height: 100vh;
