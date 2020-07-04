@@ -57,11 +57,9 @@ const Country = ({
         <DonutChart data={CountryData} />
         <LineChart data={Last30Days} />
       </div>
-    {/*
-      <div className="row mx-3 mt-2">
+      {/* <div className="row mx-3 mt-2">
         <CountryTable data={Last30Days} />
-      </div>
-    */}
+      </div> */}
     </React.Fragment>
   );
 };
