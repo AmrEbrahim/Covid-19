@@ -2,10 +2,10 @@ svg {
     touch-action: inherit !important;
 }
 
-.notFound img {
-    width: 70%;
-    height: 70%;
-    margin: 0 auto;
+.notFound p {
+    background: -webkit-linear-gradient(45deg, rgba(43, 46, 129, 1) 0%, rgba(190, 79, 156, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .fluid-container {
