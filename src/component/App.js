@@ -15,8 +15,8 @@ const App = () => {
   return (
     <div className="fluid-container">
       <Router>
+        <Header />
         <Switch>
-          <Header />
           <Route path="/" exact component={World}></Route>
           <Route path="/NotFound" exact component={NotFound}></Route>
           <Route path="/:id" component={Country}></Route>
