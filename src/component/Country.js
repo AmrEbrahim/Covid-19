@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 import {
   fetchCountryData,
   fetchCountry10Days,
@@ -21,15 +22,23 @@ const Country = ({
   Last30Days,
   match,
 }) => {
+  const history = useHistory();
   useEffect(() => {
-    fetchCountryData(match.params.id);
-    fetchCountry10Days(match.params.id);
-    fetchCountry30Days(match.params.id);
+    (async () => {
+      try {
+        await fetchCountryData(match.params.id);
+        await fetchCountry10Days(match.params.id);
+        await fetchCountry30Days(match.params.id);
+      } catch (e) {
+        history.push('/NotFound');
+      }
+    })();
   }, [
     match.params.id,
     fetchCountryData,
     fetchCountry10Days,
     fetchCountry30Days,
+    history
   ]);
   if (!Last10Days.cases || !Last30Days.cases || !CountryData.active) {
     return (
