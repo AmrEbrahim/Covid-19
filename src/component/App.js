@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import { BrowserRouter as Router, Route , Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import World from "./World";
 import Country from "./Country";
