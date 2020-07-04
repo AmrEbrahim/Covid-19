@@ -18,8 +18,8 @@ const App = () => {
         <Switch>
           <Header />
           <Route path="/" exact component={World}></Route>
-          <Route path="/:id" exact component={Country}></Route>
-          <Route path="/country/NotFound" exact component={NotFound}></Route>
+          <Route path="/NotFound" exact component={NotFound}></Route>
+          <Route path="/:id" component={Country}></Route>
         </Switch>
       </Router>
     </div>
