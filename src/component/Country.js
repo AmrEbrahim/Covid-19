@@ -40,7 +40,6 @@ const Country = ({
     fetchCountry30Days,
     history
   ]);
-
   if (!Last10Days.cases || !Last30Days.cases || !CountryData.active) {
     return (
       <div className="loader">
@@ -48,7 +47,6 @@ const Country = ({
       </div>
     );
   }
-
   return (
     <React.Fragment>
       <TotalCases data={CountryData} />
@@ -68,12 +66,12 @@ const mapStateToProps = ({ CountryData, Last10Days, Last30Days }) => {
   return {
     CountryData,
     Last10Days,
-    Last30Days
+    Last30Days,
   };
 };
 
 export default connect(mapStateToProps, {
   fetchCountryData,
   fetchCountry10Days,
-  fetchCountry30Days
+  fetchCountry30Days,
 })(Country);
