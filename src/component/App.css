@@ -4,8 +4,15 @@ svg {
 
 .notFound p {
     background: -webkit-linear-gradient(45deg, rgba(43, 46, 129, 1) 0%, rgba(190, 79, 156, 1) 100%);
+    background-clip: text;
     -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    -o-background-clip: text;
     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -o-text-fill-color: transparent;
 }
 
 .fluid-container {
