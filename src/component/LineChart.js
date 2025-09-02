@@ -64,7 +64,7 @@ const LineChart = ({ data }) => {
     <div className="col-12 firstColor mt-3 px-2 pt-4">
       <div className="app">
         <div className="mb-2" style={{ borderBottom: "1px dashed #3b3f5c" }}>
-          <p className="h6 text-muted">Impact over time (30 Days)</p>
+          <p className="h6 text-white">Impact over time (30 Days)</p>
         </div>
         <div className="mixed-chart">
           <Chart options={options} series={series} type="area" height="300" />

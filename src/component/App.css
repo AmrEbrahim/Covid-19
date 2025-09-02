@@ -136,6 +136,96 @@ svg {
 
 /************************************************/
 
+.firstColor table {
+    color: #888ea8 !important;
+    font-size: 13px !important;
+    background-color: transparent !important;
+}
+
+.firstColor table thead tr {
+    background-color: transparent !important;
+}
+
+.firstColor table thead th {
+    color: #009688 !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #191e3a !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.firstColor table tbody tr {
+    background-color: transparent !important;
+    border-bottom: 1px solid #191e3a !important;
+}
+
+.firstColor table tbody td {
+    color: #888ea8 !important;
+    background-color: transparent !important;
+    border: none !important;
+    font-size: 13px !important;
+}
+
+.firstColor table tbody tr:hover {
+    color: #888ea8 !important;
+    background-color: #191e3a !important;
+    transform: scale(1.008);
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.firstColor table tbody tr:hover td {
+    color: #888ea8 !important;
+    background-color: transparent !important;
+}
+
+/* Search Input Placeholder Styling */
+.searchForm input::placeholder {
+    color: white !important;
+    opacity: 0.7;
+}
+
+.searchForm input::-webkit-input-placeholder {
+    color: white !important;
+    opacity: 0.7;
+}
+
+.searchForm input::-moz-placeholder {
+    color: white !important;
+    opacity: 0.7;
+}
+
+.searchForm input:-ms-input-placeholder {
+    color: white !important;
+    opacity: 0.7;
+}
+
+/* Custom Scrollbar Styling */
+.custom-scrollbar::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #0e1726;
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #191e3a;
+    border-radius: 4px;
+    border: 1px solid #0e1726;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #009688;
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner {
+    background: #0e1726;
+}
+
 table {
     color: #888ea8 !important;
     font-size: 13px;

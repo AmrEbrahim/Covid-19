@@ -42,10 +42,10 @@ const Donut = ({ data }) => {
   const series = [data.active, data.recovered, data.deaths];
 
   return (
-    <div className="col-12 col-sm-12 col-lg-4 pr-0">
+    <div className="col-12 col-sm-12 col-lg-4 pe-0">
       <div className="col-12 col-sm-12 col-xl-12 h-100 firstColor pt-4">
         <div className="mb-2">
-          <p className="h6 text-muted">Impact so far</p>
+          <p className="h6 text-white">Impact so far</p>
         </div>
         <div className="donut d-flex justify-content-center align-items-center pb-3">
           <Chart options={options} series={series} type="donut" width="350" />

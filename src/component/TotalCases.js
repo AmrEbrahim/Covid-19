@@ -2,8 +2,8 @@ import React from "react";
 
 const TotalCases = ({ data }) => {
   return (
-    <React.Fragment>
-      <h4 className="ml-3 text-muted">
+    <>
+      <h4 className="ms-3 text-white">
         {data.country ? data.country : "World"} Live Statistics
       </h4>
       <div className="alert firstColor m-3 py-3">
@@ -30,7 +30,7 @@ const TotalCases = ({ data }) => {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

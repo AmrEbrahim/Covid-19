@@ -89,7 +89,7 @@ const ColumnChart = ({ data }) => {
     <div className="col-12 col-sm-12 col-lg-12 firstColor px-4 pt-4 mt-3">
       <div className="app">
         <div className="mb-2" style={{ borderBottom: "1px dashed #3b3f5c" }}>
-          <p className="h6 text-muted">Impact over data</p>
+          <p className="h6 text-white">Impact over data</p>
         </div>
         <div className="mixed-chart">
           <Chart options={options} series={series} type="bar" height="300" />

@@ -24,12 +24,12 @@ const Map = ({ data }) => {
 
   return (
     <div className="row mx-3 my-3 mb-2">
-      <div className="col-12 col-xl-4 pl-0">
+      <div className="col-12 col-xl-4 ps-0">
         <div className="col-12 col-xl-12 firstColor h-100">
           <div className="country-heading p-4 mb-3">
             <h6 className="text-white">
               <img
-                className="mr-1"
+                className="me-1"
                 style={{ width: "25px", height: "25px" }}
                 src={country.countryInfo.flag}
                 alt="Country"
@@ -38,7 +38,7 @@ const Map = ({ data }) => {
             </h6>
           </div>
           <div className="d-flex mb-4">
-            <div className="icon bg-primary mr-2 mt-1">
+            <div className="icon bg-primary me-2 mt-1">
               <i className="fa fa-heartbeat text-white"></i>
             </div>
             <div style={{ width: "90%" }}>
@@ -60,7 +60,7 @@ const Map = ({ data }) => {
           </div>
           <div className="d-flex mb-4">
             <div
-              className="icon mr-2 mt-1"
+              className="icon me-2 mt-1"
               style={{ background: "rgb(0, 227, 150)" }}
             >
               <i className="fa fa-plus-square text-white"></i>
@@ -83,7 +83,7 @@ const Map = ({ data }) => {
             </div>
           </div>
           <div className="d-flex mb-4">
-            <div className="icon bg-danger mr-2 mt-1">
+            <div className="icon bg-danger me-2 mt-1">
               <i className="fa fa-exclamation-circle text-white"></i>
             </div>
             <div style={{ width: "90%" }}>
@@ -104,7 +104,7 @@ const Map = ({ data }) => {
             </div>
           </div>
           <div className="d-flex mb-4">
-            <div className="icon bg-warning mr-2 mt-1">
+            <div className="icon bg-warning me-2 mt-1">
               <i className="fa fa-male text-white"></i>{" "}
             </div>
             <div style={{ width: "90%" }}>
