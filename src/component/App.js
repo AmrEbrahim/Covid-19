@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import World from "./World";
 import Country from "./Country";
@@ -16,11 +16,11 @@ const App = () => {
     <div className="fluid-container">
       <Router>
         <Header />
-        <Switch>
-          <Route path="/" exact component={World}></Route>
-          <Route path="/NotFound" exact component={NotFound}></Route>
-          <Route path="/:id" component={Country}></Route>
-        </Switch>
+        <Routes>
+          <Route path="/" element={<World />} />
+          <Route path="/NotFound" element={<NotFound />} />
+          <Route path="/:id" element={<Country />} />
+        </Routes>
       </Router>
     </div>
   );
