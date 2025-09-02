@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   Collapse,
   Navbar,
@@ -15,13 +15,13 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentCountry, setCurrentCountry] = useState("");
   const [countryInput, setCountryInput] = useState("");
-  const history = useHistory();
+  const navigate = useNavigate();
   const toggle = () => setIsOpen(!isOpen);
 
   const onFormSubmit = async (e) => {
     e.preventDefault();
     setCountryInput(currentCountry);
-    history.push(`/${currentCountry}`);
+    navigate(`/${currentCountry}`);
   };
   return (
     <div>
@@ -33,14 +33,14 @@ const Header = () => {
               src="/corona-virus.png"
               width="40"
               height="40"
-              className="mr-2"
+              className="me-2"
               alt=""
             />
             Coronavirus (COVID-19)
           </NavbarBrand>
-          <form onSubmit={onFormSubmit} className="searchForm mr-auto">
+          <form onSubmit={onFormSubmit} className="searchForm me-auto d-flex">
             <input
-              className="mr-3"
+              className="form-control me-3"
               value={currentCountry}
               onChange={(e) => setCurrentCountry(e.target.value)}
               placeholder="Search a Country..."
@@ -50,9 +50,9 @@ const Header = () => {
             </Button>
           </form>
           <NavbarText>
-            <div className="countryCode d-flex">
+            <div className="countryCode d-flex align-items-center">
               {countryInput === "" ? "🌎" : code(countryInput)}
-              <h6 className="ml-2">
+              <h6 className="ms-2 mb-0">
                 {countryInput === "" ? "World" : name(code(countryInput))}
               </h6>
             </div>

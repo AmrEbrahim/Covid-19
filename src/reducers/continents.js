@@ -1,4 +1,4 @@
-export default (state = {}, action) => {
+const ContinentsReducer = (state = {}, action) => {
   switch (action.type) {
     case "CONTINENTS":
       return { ...state, ...action.payload };
@@ -6,3 +6,5 @@ export default (state = {}, action) => {
       return state;
   }
 };
+
+export default ContinentsReducer;

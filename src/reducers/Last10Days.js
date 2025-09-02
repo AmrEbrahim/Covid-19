@@ -1,4 +1,4 @@
-export default (state = {}, action) => {
+const Last10DaysReducer = (state = {}, action) => {
   switch (action.type) {
     case "LAST10DAYS":
       return { ...state, ...action.payload };
@@ -8,3 +8,5 @@ export default (state = {}, action) => {
       return state;
   }
 };
+
+export default Last10DaysReducer;
